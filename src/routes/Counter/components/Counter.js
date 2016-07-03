@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Counter = () => (
   <div>
-    Counter: 0
+    <Link to="/">Back</Link>
+    <h3>
+      Counter: 0
+    </h3>
   </div>
 )
 
