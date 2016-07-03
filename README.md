@@ -1,1 +1,1 @@
-# simple-react-starter
+# A Simple React Starter for Scalable Mobile Web App

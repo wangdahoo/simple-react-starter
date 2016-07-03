@@ -8,12 +8,30 @@ app.set('port', (process.env.PORT || 5000));
 var webpack = require('webpack');
 var webpackDevMiddleware = require('webpack-dev-middleware');
 var webpackHotMiddleware = require('webpack-hot-middleware');
-var config = require('./webpack.config');
+
+var config = require('./webpack.config.dev');
 var compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+var middleware = webpackDevMiddleware(compiler, {
+  publicPath: config.output.publicPath,
+  headers: { // Custom headers here
+
+  },
+  stats: {
+    colors: true,
+    hash: false,
+    timings: true,
+    chunks: false,
+    chunkModules: false,
+    modules: false
+  }
+});
+
+app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
 
-app.use('/', express.static(path.join(__dirname, 'public')));
+app.get('*', function response(req, res) {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 // Additional middleware which will set headers that we need on each request.
 app.use(function(req, res, next) {
@@ -26,6 +44,10 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Server started: http://localhost:' + app.get('port') + '/');
+app.listen(app.get('port'), function onStart(err) {
+  if (err) {
+    console.log(err);
+  }
+
+  console.log('==> Server Listening on port: http://localhost:' + app.get('port') + '/');
 });

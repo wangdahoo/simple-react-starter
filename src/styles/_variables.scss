@@ -1,0 +1,97 @@
+// Colors
+$gray-base:                 #000 !default;
+$gray-darker:               lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:                 lighten($gray-base, 20%) !default;   // #333
+$gray:                      lighten($gray-base, 33.5%) !default; // #555
+$gray-light:                lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:              lighten($gray-base, 93.5%) !default; // #eee
+
+$primary:                   darken(#428bca, 6.5%) !default; // #337ab7
+$success:                   #3bbc56 !default;
+$info:                      #5bc0de !default;
+$warning:                   #ffdd76 !default;
+$danger:                    #ff3e3e !default;
+
+// Components Common
+$font-family-base:          "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+$font-size-base:            28px !default;
+$font-size-large:           36px !default;
+$font-size-small:           24px !default;
+// Unit-less `line-height` for use in components like buttons.
+$line-height-base:          1.428571429 !default; // 20/14
+$text-color:                #444;
+
+// Background color for `<body>`.
+$body-bg:                   #F5F5F5;
+// Global text color on `<body>`.
+$text-color:                #444 !default;
+// Global textual link color.
+$link-color:                $danger !default;
+// Link hover color set via `darken()` function.
+$link-hover-color:          darken($link-color, 15%) !default;
+// Link hover decoration.
+$link-hover-decoration:     underline !default;
+
+$padding-base-vertical:     12px !default;
+$padding-base-horizontal:   24px !default;
+
+$padding-large-vertical:    20px !default;
+$padding-large-horizontal:  32px !default;
+
+$padding-small-vertical:    10px !default;
+$padding-small-horizontal:  20px !default;
+
+$padding-xs-vertical:       2px !default;
+$padding-xs-horizontal:     10px !default;
+
+$line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:         1.5 !default;
+
+$border-radius-base:        8px !default;
+$border-radius-large:       12px !default;
+$border-radius-small:       6px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $danger !default;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:          8px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:         10px !default;
+
+
+// Buttons
+$btn-font-weight:           normal !default;
+
+$btn-default-color:         #333 !default;
+$btn-default-bg:            #fff !default;
+$btn-default-border:        #ccc !default;
+
+$btn-primary-color:         #fff !default;
+$btn-primary-bg:            $primary !default;
+$btn-primary-border:        darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:         #fff !default;
+$btn-success-bg:            $success !default;
+$btn-success-border:        darken($btn-success-bg, 5%) !default;
+
+$btn-info-color:            #fff !default;
+$btn-info-bg:               $info !default;
+$btn-info-border:           darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color:         #fff !default;
+$btn-warning-bg:            $warning !default;
+$btn-warning-border:        darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:          #fff !default;
+$btn-danger-bg:             $danger !default;
+$btn-danger-border:         darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color:   $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:    $border-radius-base !default;
+$btn-border-radius-large:   $border-radius-large !default;
+$btn-border-radius-small:   $border-radius-small !default;
