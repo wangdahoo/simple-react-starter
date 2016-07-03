@@ -2,7 +2,7 @@ import React from 'react'
 
 const Counter = () => (
   <div>
-    Counter: {this.state.counter}
+    Counter: 0
   </div>
 )
 

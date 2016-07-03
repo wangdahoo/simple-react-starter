@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 const styles = {
-  container: { height: '100%' }
+  container: {height: '100%'}
 }
 
 const App = ({ children }) => (
@@ -11,3 +11,4 @@ const App = ({ children }) => (
 )
 
 export default App
+

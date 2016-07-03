@@ -16,4 +16,4 @@ class Greetings extends Component {
   }
 }
 
-module.exports = Greetings;
+module.exports = Greetings

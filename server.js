@@ -13,9 +13,6 @@ var config = require('./webpack.config.dev');
 var compiler = webpack(config);
 var middleware = webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
-  headers: { // Custom headers here
-
-  },
   stats: {
     colors: true,
     hash: false,
@@ -29,19 +26,10 @@ var middleware = webpackDevMiddleware(compiler, {
 app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
 
+app.use('/', express.static(__dirname + config.output.publicPath));
 app.get('*', function response(req, res) {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
-
-// Additional middleware which will set headers that we need on each request.
-app.use(function(req, res, next) {
-    // Set permissive CORS header - this allows this server to be used only as
-    // an API server in conjunction with something like webpack-dev-server.
-    res.setHeader('Access-Control-Allow-Origin', '*');
-
-    // Disable caching so we'll always get the latest comments.
-    res.setHeader('Cache-Control', 'no-cache');
-    next();
+  res.write(middleware.fileSystem.readFileSync(path.join(__dirname, config.output.publicPath + '/index.html')));
+  res.end();
 });
 
 app.listen(app.get('port'), function onStart(err) {
