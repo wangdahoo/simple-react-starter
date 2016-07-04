@@ -1,7 +1,48 @@
 .page-wrapper {
   height: 100%;
+
   .page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 88px;
+    z-index: 5000;
+    border-bottom: 1px solid #DDDDDD;
+    background-color: #F5F5F5;
+    color: #666;
+
+    > .title {
+      text-align: center;
+      font-size: 36px;
+      line-height: 88px;
+      color: #666;
+      min-width: 360px;
+      width: 360px;
+      height: 88px;
+      margin: 0 auto;
+    }
+
+    > .nav-btn {
+      width: 120px;
+      height: 88px;
+      padding: 0 20px;
+      position: absolute;
+      top: 0;
+      text-align: center;
+      font-size: 28px;
+      line-height: 88px;
+    }
+
+
+    > .nav-btn.left {
+      left: 0;
+    }
+
+    > .nav-btn.right {
+      right: 0;
+    }
+
   }
 
   .page-content {
