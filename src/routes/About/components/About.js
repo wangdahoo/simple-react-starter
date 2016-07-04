@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const About = () => (
   <div>
-    <Link to="/">Back</Link>
+    <Link to="/greetings">Back</Link>
     <h3>About</h3>
   </div>
 )

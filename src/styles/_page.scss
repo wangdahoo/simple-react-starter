@@ -47,6 +47,11 @@
 
   .page-content {
     height: 100%;
+    padding: 24+88px 24px 24px 24px;
+
+    &.no-page-header {
+      padding: 24px;
+    }
   }
 }
 

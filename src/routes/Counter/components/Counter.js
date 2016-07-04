@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 
 const Counter = () => (
   <div>
-    <Link to="/">Back</Link>
+    <Link to="/greetings">Back</Link>
     <h3>
       Counter: 0
     </h3>
