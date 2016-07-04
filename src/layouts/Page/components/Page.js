@@ -1,26 +1,18 @@
 import React, { Component, PropTypes } from 'react'
 
-type Props = {
-  title: string,
-  btnLeftText: string,
-  btnRightText: string,
-  onBtnLeftClick: Function,
-  onBtnRightClick: Function,
-}
-
-const Page = (props: Props) => (
+const Page = (props) => (
   <div className={'page-wrapper'}>
     <div className={'page-header'}>
-      <div className={'nav-btn left'} onClick={props.onBtnLeftClick}>
-        {props.btnLeftText || ''}
+      <div className={'nav-item left'} onClick={props.onNavItemLeftClick}>
+        {props.navItemLeft}
       </div>
 
       <div className={'title'}>
         {props.title || ''}
       </div>
 
-      <div className={'nav-btn right'} onClick={props.onBtnRightClick}>
-        {props.btnRightText || ''}
+      <div className={'nav-item right'} onClick={props.onNavItemRightClick}>
+        {props.navItemRight || ''}
       </div>
     </div>
 
@@ -30,10 +22,10 @@ const Page = (props: Props) => (
 
 Page.propTypes = {
   title: PropTypes.string,
-  btnLeftText: PropTypes.string,
-  btnRightText: PropTypes.string,
-  onBtnLeftClick: PropTypes.func,
-  onBtnRightClick: PropTypes.func
+  navItemLeft: PropTypes.element,
+  navItemRight: PropTypes.element,
+  onNavItemLeftClick: PropTypes.func,
+  onNavItemRightClick: PropTypes.func
 }
 
 export default Page

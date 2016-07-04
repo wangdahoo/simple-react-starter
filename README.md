@@ -1,1 +1,2 @@
-# A Simple React Starter for Scalable Mobile Web App
+# Simple React Starter
+a simple react starter for scalable mobile web application.

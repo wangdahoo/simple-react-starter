@@ -9,7 +9,7 @@
     height: 88px;
     z-index: 5000;
     border-bottom: 1px solid #DDDDDD;
-    background-color: #F5F5F5;
+    background-color: #FFF;
     color: #666;
 
     > .title {
@@ -23,24 +23,57 @@
       margin: 0 auto;
     }
 
-    > .nav-btn {
+    > .nav-item {
       width: 120px;
       height: 88px;
-      padding: 0 20px;
+      padding: 0;
       position: absolute;
       top: 0;
-      text-align: center;
       font-size: 28px;
       line-height: 88px;
+
+      .btn {
+        margin-top: -6px;
+
+        &.btn-icon {
+          margin-top: -4px;
+          padding-top: 9px;
+          padding-bottom: 9px;
+          i, .ion {
+            font-size: 56px;
+            line-height: 100%;
+          }
+        }
+
+        // 去除out-line
+        &,
+        &:active,
+        &.active {
+          &:focus,
+          &.focus {
+            outline: none;
+          }
+        }
+
+        &:active,
+        &.active {
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+
+      }
     }
 
 
-    > .nav-btn.left {
+    > .nav-item.left {
+      float: left;
       left: 0;
     }
 
-    > .nav-btn.right {
+    > .nav-item.right {
+      float: right;
       right: 0;
+      text-align: right;
     }
 
   }

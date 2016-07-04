@@ -62,24 +62,47 @@ a.btn {
 }
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+  &.btn-clear {
+    @include button-variant($primary, rgba(#FFF, 0), rgba(#FFF, 0));
+  }
 }
 // Success appears as green
 .btn-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  &.btn-clear {
+    @include button-variant($success, rgba(#FFF, 0), rgba(#FFF, 0));
+  }
 }
 // Info appears as blue-green
 .btn-info {
   @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+  &.btn-clear {
+    @include button-variant($info, rgba(#FFF, 0), rgba(#FFF, 0));
+  }
 }
 // Warning appears as orange
 .btn-warning {
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+  &.btn-clear {
+    @include button-variant($danger, rgba(#FFF, 0), rgba(#FFF, 0));
+  }
 }
 // Danger and error appear as red
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+  &.btn-clear {
+    @include button-variant($danger, rgba(#FFF, 0), rgba(#FFF, 0));
+  }
 }
 
+.btn-clear {
+  @include button-variant(#444, rgba(#FFF, 0), rgba(#FFF, 0));
+  border: none;
+  &:active,
+  &.active {
+    color: rgba(#000, 0.5) !important;
+  }
+}
 
 // Link buttons
 // -------------------------
