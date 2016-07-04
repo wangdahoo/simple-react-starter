@@ -20,7 +20,7 @@ const onNavItemLeftClick = () => {
 // ----------------------------------------
 // Page Content
 // ----------------------------------------
-const content = <div className={'page-content'}>Home Page</div>
+const content = <div className={'page-content padding-horizontal'}>Home Page</div>
 
 const Home = () => {
   return (
