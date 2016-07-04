@@ -1,18 +1,34 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-
+import { Link, browserHistory } from 'react-router'
 import Page from '../../../layouts/Page'
 
-const content = <div className={'page-content'}>Home Page</div>
-
-const navItemLeft = <button className={'btn btn-clear'}>欢迎</button>
+// ----------------------------------------
+// Nav Items
+// ----------------------------------------
+const navItemLeft = <button className={'btn btn-clear'}>Greetings</button>
 const navItemRight = <button className={'btn btn-clear btn-icon'}>
   <i className={'ion ion-ios-refresh-empty'}></i>
 </button>
 
+// ----------------------------------------
+// Nav Item Handlers
+// ----------------------------------------
+const onNavItemLeftClick = () => {
+  browserHistory.push('/greetings');
+}
+
+// ----------------------------------------
+// Page Content
+// ----------------------------------------
+const content = <div className={'page-content'}>Home Page</div>
+
 const Home = () => {
   return (
-    <Page title={'首页'} navItemLeft={navItemLeft} navItemRight={navItemRight} content={content} />
+    <Page title={'首页'}
+          navItemLeft={navItemLeft}
+          navItemRight={navItemRight}
+          onNavItemLeftClick={onNavItemLeftClick}
+          content={content} />
   )
 }
 

@@ -80,10 +80,15 @@
 
   .page-content {
     height: 100%;
-    padding: 24+88px 24px 24px 24px;
+    padding: 24+88px 0 24px 0;
 
     &.no-page-header {
-      padding: 24px;
+      padding: 24px 0;
+    }
+
+    &.padding-horizontal {
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
 }
