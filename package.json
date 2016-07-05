@@ -12,6 +12,7 @@
     "babel-polyfill": "^6.9.1",
     "normalize.css": "^4.2.0",
     "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-router": "^2.5.2"
   },

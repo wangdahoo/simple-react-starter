@@ -93,3 +93,21 @@
   }
 }
 
+/* Page Transition */
+.page-transition-fade-enter {
+  opacity: 0.01;
+  transition: opacity .2s ease;
+}
+
+.page-transition-fade-enter.page-transition-fade-enter-active {
+  opacity: 1;
+}
+
+.page-transition-fade-leave {
+  opacity: 0.9;
+  transition: opacity .2s ease;
+}
+
+.page-transition-fade-leave.page-transition-fade-leave-active {
+  opacity: 0;
+}

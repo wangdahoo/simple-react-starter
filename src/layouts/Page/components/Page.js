@@ -1,8 +1,11 @@
 import React, { Component, PropTypes } from 'react'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-const Page = (props) => (
-  <div className={'page-wrapper'}>
-    <div className={'page-header'}>
+const Page = (props) => {
+  let header;
+
+  if (props.title) {
+    header = <div className={'page-header'}>
       <div className={'nav-item left'} onClick={props.onNavItemLeftClick}>
         {props.navItemLeft}
       </div>
@@ -15,10 +18,15 @@ const Page = (props) => (
         {props.navItemRight || ''}
       </div>
     </div>
+  }
 
-    {props.content}
-  </div>
-)
+  return (
+    <div className={'page-wrapper'}>
+      {header}
+      {props.content}
+    </div>
+  )
+}
 
 Page.propTypes = {
   title: PropTypes.string,
