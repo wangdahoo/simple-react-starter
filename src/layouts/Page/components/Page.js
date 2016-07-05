@@ -5,7 +5,7 @@ const Page = (props) => {
   let header;
 
   if (props.title) {
-    header = <div className={'page-header'}>
+    header = <div className={props.cssClass ? 'page-header ' + props.cssClass : 'page-header'}>
       <div className={'nav-item left'} onClick={props.onNavItemLeftClick}>
         {props.navItemLeft}
       </div>
