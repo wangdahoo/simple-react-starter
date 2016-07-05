@@ -1,8 +1,12 @@
+# Node.js
 node_modules/
-dist/
+npm-debug.log
 
 # WebStorm
 .idea
 
 # XOS
 .DS_Store
+
+# build
+dist/
