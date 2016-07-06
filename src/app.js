@@ -21,14 +21,14 @@ const routes = {
   },
   getChildRoutes(partialNextState, cb) {
     require.ensure([], (require) => {
-      const Greetings = require('./routes/Greetings').default;
       const Counter = require('./routes/Counter').default;
       const About = require('./routes/About').default;
+      const Todos = require('./routes/Todos').default;
 
       cb(null, [
-        Greetings,
         Counter,
-        About
+        About,
+        Todos
       ])
     })
   }
@@ -43,7 +43,6 @@ render(
 /* 2. 以JSX的方式配置路由 */
 //import App from './components/App'
 //import Home from './routes/Home/components/Home'
-//import Greetings from './routes/Greetings/components/Greetings'
 //import Counter from './routes/Counter/components/Counter'
 //import About from './routes/About/components/About'
 //
@@ -51,7 +50,6 @@ render(
 //  <Router history={browserHistory}>
 //    <Route path="/" component={App}>
 //      <IndexRoute component={Home} />
-//      <Route path="greetings" component={Greetings} />
 //      <Route path="counter" component={Counter} />
 //      <Route path="about" component={About} />
 //    </Route>

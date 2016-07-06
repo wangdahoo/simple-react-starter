@@ -1,8 +1,8 @@
 export default {
-  path: 'greetings',
+  path: 'todos',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./components/Greetings').default)
+      cb(null, require('./components/Todos').default)
     })
   }
 }
