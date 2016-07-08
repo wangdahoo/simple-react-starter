@@ -2,25 +2,30 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+function getDateTag() {
+  var d = new Date();
+  var yyyy = d.getFullYear() + '';
+  var MM = (100 + (d.getMonth() + 1) + '').substr(1, 2);
+  var dd = (100 + d.getDate() + '').substr(1, 2);
+  return yyyy + MM + dd
+}
+
 module.exports = {
-  devtool: 'cheap-source-map',
 
   entry: [
-    'webpack-hot-middleware/client?reload=true',
-    path.join(__dirname, 'src/app.js')
+    path.resolve(__dirname, 'src/app.js')
   ],
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    filename: 'bundle-' + getDateTag() + '-[hash:8].js'
   },
 
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
         include: __dirname
       },
@@ -37,6 +42,12 @@ module.exports = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
   ]
 };
