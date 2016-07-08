@@ -4,7 +4,7 @@ a simple react starter for scalable mobile web application.
 ## Features
 
 - Equip with React, React-Router, ES6 & Babel 6
-- Code Splitting based on Routes & Components
+- Code Splitting with Examples (Counter, Todos)
 - Build with Webpack
 - CSS Scaffolding for Mobile App 
 
